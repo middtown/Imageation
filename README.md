@@ -6,7 +6,7 @@ An application folks can utilize to use images as sources of inspiration.
 
 What was my [original inspiration and ideas](https://trello.com/b/bLHtwlxQ/imagination) .
 
-Please check out the site at [IMAGEATION](https://github.com/middtown/Imageation.git) to check out the site. 
+Please check out the site at [IMAGEATION](https://imageation.herokuapp.com) to check out the site. 
 
 ### Wireframes
 

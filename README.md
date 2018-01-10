@@ -18,16 +18,16 @@ Just type into the search bar a theme, place or media genre you think may help..
 more to come...
 
 ### Built With
-  [heroku](https://www.heroku.com/home) - Hosting Site
-  [gettyimages](http://developers.gettyimages.com/en/) - API
-  [imgur](https://api.imgur.com) - API
-  [mongodb](https://www.mongodb.com) - Database Management
-  [mongoose.js](http://mongoosejs.com/index.html) - ODM Library
-  [express.js](https://expressjs.com) - Web App Framework for Node
-  [node.js](https://nodejs.org/en/) 
-  [javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
-  [bootstrap](http://getbootstrap.comc) - Dependency Management
-  [css](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+  [heroku](https://www.heroku.com/home) .
+  [gettyimages](http://developers.gettyimages.com/en/) . 
+  [imgur](https://api.imgur.com) . 
+  [mongodb](https://www.mongodb.com) . 
+  [mongoose.js](http://mongoosejs.com/index.html) . 
+  [express.js](https://expressjs.com) . 
+  [node.js](https://nodejs.org/en/) . 
+  [javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) . 
+  [bootstrap](http://getbootstrap.comc) . 
+  [css](https://developer.mozilla.org/en-US/docs/Web/CSS) .  
   [html](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
 

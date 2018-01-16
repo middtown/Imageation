@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Imageation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">  
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+<body class="bg-secondary text-white">
+	<!-- nav bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+		<a class="navbar-brand order-1 mr-0 text-secondary" href="http://www.middtownperspectives.com" target="_blank">presented by Aaron Middleton</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+			<div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="#">About</a>
+					<a class="nav-item nav-link" href="#">Pricing</a>
+					<!-- modal sign in button -->
+					<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#signIn">Sign In</button> <!-- end modal sign in button -->
+
+
+				</div>
+			</div>
+		</div>
+	</nav> <!-- /nav bar -->
+
+	<!-- Jumbotron  -->
+	<div class="jumbotron jumbotron-fluid bg-info text-white">
+		<div class="container text-sm-center pt-5">
+			<h1 class="display-2">Imageation</h1>
+			<p class="lead">A one word search platform to help you gain a little inspiration.</p>
+		</div>
+	</div> <!-- end jumbotron -->
+
+	<div class="container text-center">
+		<h1 class="display-3 mt-5 text-left">Welcome Guest!</h1>
+			<h3 class="display 4 text-left">Here's what's being created!</h3> 
+			<div class="container pt-4">
+				
+				<div class="card-deck">
+					<div class="card text-dark text-left col-lg-4">
+						<img class="card-img-top" src="images/robbie.png" alt="dude named robbie">
+						<div class="card-body">
+							<h5 class="card-title">This Very Dope Thing</h5>
+							<p class="card-text">Description Text.</p>
+							<p class="card-text">URL.</p>
+						</div>
+					</div>
+					<div class="card text-dark text-left col-lg-4">
+						<img class="card-img-top" src="images/vivianne.png" alt="girl named vivianne">
+						<div class="card-body">
+							<h5 class="card-title">That Very Dope Thing</h5>
+							<p class="card-text">Description Text.</p>
+							<p class="card-text">URL.</p>
+						</div>
+					</div>
+					<div class="card text-dark text-left col-lg-4">
+						<img class="card-img-top" src="images/json.png" alt="girl named json">
+						<div class="card-body">
+							<h5 class="card-title">Some Other Very Dope Thing</h5>
+							<p class="card-text">Description Text.</p>
+							<p class="card-text">URL.</p>
+						</div>
+					</div>
+				</div> <!-- end main display area -->
+	<!-- footer -->
+	<div class="container row py-3">
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">Github</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">ReadMe</a>
+			</li>
+		</ul>
+		<div class="col-md text-md-right ml-small-0">
+			<small>&copy; 2018 aaron middleton &amp; middtown perspectives</small>
+		</div> 	<!-- end footer -->
+	</div> <!-- end main container -->
+
+												<!-- MODAL FORM -->
+
+	<div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signIn" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header bg-info text-white">
+					<h5 class="modal-title" id="exampleModalLabel">Sing In</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+					<div class="modal-body">
+					<!-- sign up form -->
+
+						<form>
+							<div class="form-group">
+								<label for="name">Name:</label>
+								<input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Tell us your name">
+							</div>
+							<div class="form-group">
+								<label for="email">Email address</label>
+								<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email">
+								<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" placeholder="Give yourself a password">
+							</div>
+							<div class="form-check">
+								<input type="checkbox" class="form-check-input" id="saveMyInfo">
+								<label class="form-check-label" for="saveMyInfo">Save my info</label>
+							</div>
+								<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+
+					<!-- end sign up form -->
+					</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+											<!-- END MODUL -->
+</body>
+	<script type="text/javascript" src="scripts/app.js"></script>
+</html>

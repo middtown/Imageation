@@ -45,18 +45,18 @@ let Project = mongoose.model('Project', ProjectSchema);
 /**************
  * MIDDLEWARE *
  **************/
-
+//get all projects
 function getProjects(req, res){
 	request(apiUrl, function (error, response, body) {
     let projectInfo = JSON.parse(body);
-      Object.keys(projectInfo).forEach(function(key) {
-        console.log(projectInfo[key]);
-                //res.send(projectInfo.projects[0]);
+    for (var i = 0; i < projectInfo.projects.length; i++) {
+      console.log(projectInfo.projects[i].name);
+    }
+      console.log(i);
+      res.send(projectInfo.projects);
 
       });
        // console.log( projectInfo.projects[0]);      
-
-  });
 }
 
 function getProjectsByGenre(req, res){
@@ -64,13 +64,12 @@ function getProjectsByGenre(req, res){
 
   request(apiUrl+"&q=+"+genreReq, function (error, response, body) {
     let projectInfoByGenre = JSON.parse(body);
-      //Object.keys(projectInfoByGenre).forEach(function(element) {
-      //});
-        console.log("Found:" + projectInfoByGenre);
-      
+        console.log(projectInfoByGenre.projects[1]);      
         res.send(projectInfoByGenre);
   });
 }
+
+
 /**********
  * ROUTES *
  **********/

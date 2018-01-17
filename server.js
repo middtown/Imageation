@@ -26,6 +26,30 @@ app.set("views", __dirname + "/public");
 app.engine("ejs", require("ejs").renderFile);
 app.set("view engine", "ejs");
 
+                              /************ Passport login begin *******************/
+
+mongoose.connect("mongodb://localhost/local-authentication-with-passport"); 
+
+app.use(morgan("dev")); 
+app.use(cookieParser());
+app.use(bodyParser());
+app.use(session({ secret: "WDI-GENERAL-ASSEMBLY-EXPRESS" })); 
+app.use(passport.initialize());
+app.use(passport.session()); 
+app.use(flash());
+
+require("./config/passport")(passport);
+  
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user;
+  next();
+});
+
+var routes = require("./config/routes");
+app.use(routes);
+
+                              /************ Passport login end *******************/
+
 
 /************
  * DATABASE *

@@ -13,9 +13,9 @@ const bcrypt = require("bcrypt-nodejs");
 const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-let behanceKey = require("./env.js");//key and clientId 
+//let behanceKey = require("./env.js");//key and clientId 
 let apiUrl = "http://www.behance.net/v2/projects?client_id=" + behanceKey;
 
 // serve static files from public folder

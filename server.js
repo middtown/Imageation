@@ -15,8 +15,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-let behanceKey = require("env.js");//key and clientId 
-let apiUrl = "http://www.behance.net/v2/projects?client_id=" + behanceKey;
+let Key = require("./env.js" || behanceKey);//key and clientId 
+let apiUrl = "http://www.behance.net/v2/projects?client_id=" + Key;
 
 // serve static files from public folder
 app.use(express.static(__dirname + "/public"));
@@ -83,9 +83,11 @@ function getProjects(req, res){
     let items = [];
       for (var i = 0; i < projectInfo.projects.length; i++) {
         items.push(projectInfo.projects[i]);
+        console.log(items[i].fields[0]);
+        res.json(items);
+
       }
-      console.log(items[1].fields[0]);
-      res.json(items);
+      //console.log(items);
   });
 }
 
@@ -97,8 +99,11 @@ function getProjectsByIdea(req, res){
       let ideas = [];
       for (var i = 0; i < projectInfoByIdea.projects.length; i++) {
         ideas.push(projectInfoByIdea.projects[i]);
+        console.log(ideas[i].name);
+        console.log(ideas[i].fields);
+        console.log(ideas[i].images);
       } 
-      console.log(ideas[1].fields[0]);
+      //console.log(ideas[1].fields[0]);
   });
 }
 
@@ -106,9 +111,11 @@ function getProjectsByIdea(req, res){
 //   let city = "denver";
 //   request(apiUrl+"&city="+city, function (error, response, body) {
 //     let projectInfoByCity = JSON.parse(body);
+//       let CITY = [];
 //       for (var i = 0; i < projectInfoByCity.projects.length; i++) {
-//         console.log(projectInfoByCity.projects[i].url);    
-//         res.send(projectInfoByCity.projects);
+//         CITY.push(projectInfoByCity.projects[i]);
+//         //console.log(projectInfoByCity.projects[i].url);    
+//         res.send(projectInfoByCity);
 //       } 
 //   });
 // }
@@ -130,7 +137,6 @@ function getProjectsByIdea(req, res){
  **********/
 app.get("/api/projects", getProjects);
 app.get("/api/projects/idea", getProjectsByIdea);
-
 // app.get("/api/projects/city", getProjectsByCity);
 // app.get("/api/projects/tag", getProjectsByTag);
 

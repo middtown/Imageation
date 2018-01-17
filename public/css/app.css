@@ -1,11 +1,10 @@
 body {
 	background-image: url("https://openlab.citytech.cuny.edu/aciotti-lucas-eportfolio/files/2017/03/amazing-art.jpg");
 	background-image-opacity:0.6;
-}
-.jumbotron-fluid .jumbrotron div {
 	opacity: 0.5;
 }
 
 #search{
 	opacity: 0.7;
 }
+

@@ -78,23 +78,27 @@ var Project = mongoose.model("Project", ProjectSchema);
  **************/
 //get all projects
 function getProjects(req, res){
-	request(apiUrl, function (error, response, body) {
+	request(apiUrl, function (error, res, body) {
     let projectInfo = JSON.parse(body);
-    for (var i = 0; i < projectInfo.projects.length; i++) {
-      console.log(projectInfo.projects[i].name);
-      res.send(projectInfo.projects[i]);
-    }
+    let items = [];
+      for (var i = 0; i < projectInfo.projects.length; i++) {
+        items.push(projectInfo.projects[i]);
+      }
+      console.log(items[1].fields[0]);
+      res.json(items);
   });
 }
 
+
 function getProjectsByIdea(req, res){
   let idea = "design";
-  request(apiUrl+"&q=+"+idea, function (error, response, body) {
-    let projectInfoByGenre = JSON.parse(body);
-      for (var i = 0; i < projectInfoByGenre.projects.length; i++) {
-        //console.log(projectInfoByGenre.projects[results].url);    
-        res.send(projectInfo.projects);
+  request(apiUrl+"&q=+"+idea, function (error, res, body) {
+    let projectInfoByIdea = JSON.parse(body);
+      let ideas = [];
+      for (var i = 0; i < projectInfoByIdea.projects.length; i++) {
+        ideas.push(projectInfoByIdea.projects[i]);
       } 
+      console.log(ideas[1].fields[0]);
   });
 }
 

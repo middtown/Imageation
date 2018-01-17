@@ -10,7 +10,9 @@ Please check out the site at [IMAGEATION](https://imageation.herokuapp.com) to c
 
 ### Wireframes
 
-coming soon!!!
+![alt text](Imageation/Page_1.png "Description goes here")
+![alt text](Imageation/Page_2.png "Description goes here")
+
 
 ### Getting Started
 

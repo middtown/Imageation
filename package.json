@@ -11,12 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "chai": "^4.1.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-method-override": "0.0.3",
     "express-session": "^1.15.6",
     "flash": "^1.1.0",
     "gettyimages-api": "^2.2.0",
@@ -24,8 +26,11 @@
     "mocha": "^4.1.0",
     "mongoose": "^4.13.9",
     "morgan": "^1.9.0",
+    "method-override": "~1.0.0",
     "node": "^9.3.0",
+    "nodejs": "0.0.0",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "request": "^2.83.0"
   }
 }

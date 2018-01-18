@@ -15,7 +15,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-let Key = require("./env.js" || behanceKey);//key and clientId 
+let Key = require("./env.js" || process.env.behanceKey);//key and clientId 
 let apiUrl = "http://www.behance.net/v2/projects?client_id=" + Key;
 
 // serve static files from public folder

@@ -32,7 +32,7 @@ app.set("view engine", "ejs");
 
                               /************ Passport login begin *******************/
 
-mongoose.connect("mongodb://localhost/local-authentication-with-passport"); 
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/local-authentication-with-passport"); 
 
 app.use(morgan("dev")); 
 app.use(cookieParser());

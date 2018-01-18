@@ -15,24 +15,15 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 let Key = process.env.behanceKey || require("./env.js");
-
-
 let apiUrl = "http://www.behance.net/v2/projects?client_id=" + Key;
 
 // serve static files from public folder
 app.use(express.static(__dirname + "/public"));
 
-//Set up EJS -- look at those views
-app.set("views", __dirname + "/public");
-app.engine("ejs", require("ejs").renderFile);
-app.set("view engine", "ejs");
 
                               /************ Passport login begin *******************/
 
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/local-authentication-with-passport"); 
 
 app.use(morgan("dev")); 
 app.use(cookieParser());
@@ -59,6 +50,7 @@ app.use(routes);
  * DATABASE *
  ************/
 
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/imageation"); 
 
 
 /**********
@@ -84,32 +76,29 @@ var Project = mongoose.model("Project", ProjectSchema);
 function getProjects(req, res){
 	request(apiUrl, function (error, info, body) {
     let projectInfo = JSON.parse(body);
-    let items = [];
+      let items = [];
       for (var i = 0; i < projectInfo.projects.length; i++) {
         items.push(projectInfo.projects[i]);
-        console.log(items[i].fields[0]);
+        //console.log(items[i].fields[0]);
       }
       res.json(items);
-      //console.log(items);
   });
 }
-
 
 function getProjectsByIdea(req, res){
-  let idea = "design";
+  let idea = "seattle";
+  var ideaArray =[];
+  var index = [];
   request(apiUrl+"&q=+"+idea, function (error, info, body) {
     let projectInfoByIdea = JSON.parse(body);
-      let ideas = [];
-      for (var i = 0; i < projectInfoByIdea.projects.length; i++) {
-        ideas.push(projectInfoByIdea.projects[i]);
-        console.log(ideas[i].name);
-        console.log(ideas[i].fields);
-        console.log(ideas[i].images);
-      } 
-      //console.log(ideas[1].fields[0]);
+    projectInfoByIdea.projects.map( function callback( query, Index, ideas) {
+    // push values to larger scoped empty variables
+    ideaArray.push(ideas);
+    index.push(Index);
+    });
+    res.json(ideaArray);
   });
 }
-
 // function getProjectsByCity(req, res){
 //   let city = "denver";
 //   request(apiUrl+"&city="+city, function (error, response, body) {
